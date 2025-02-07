@@ -1,0 +1,548 @@
+{
+    "Template_0": {
+        "name": "ICE Overview Report new",
+        "report_type": "Layout:basic",
+        "tags": "",
+        "item_filter": "A|s_app|cont|Converge Report 1;A|s_date|gte|2017-04-17T09:37:34.688000;",
+        "params": {
+            "HTML": "\n",
+            "sort_selection": "all",
+            "filter_type": "root_replace",
+            "sort_fields": []
+        },
+        "sort_selection": "all",
+        "parent": null,
+        "guid": "a5e6d2c0-8c7e-4f41-bed1-c9fab293aad9",
+        "children": [
+            "Template_1",
+            "Template_2",
+            "Template_3",
+            "Template_4",
+            "Template_5",
+            "Template_6",
+            "Template_7"
+        ]
+    },
+    "Template_1": {
+        "name": "Tags to properties",
+        "report_type": "Layout:tagprops",
+        "tags": "",
+        "item_filter": "A|i_name|cont|intro_text;",
+        "params": {},
+        "sort_selection": "",
+        "parent": "Template_0",
+        "children": [
+            "Template_8"
+        ]
+    },
+    "Template_8": {
+        "name": "Intro html",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "",
+        "params": {
+            "HTML": "<h1><center>Converge Nexus Demo</center></h1>\n<h1><center>Investigative Analysis Report: In-Cylinder Analysis</center></h1>\n<h3><center>\n<p>Session Date: {{sf/date|text_date:\"%d %b %Y\"}}</p>\n<p>Report Generation Date: {{date_datetime|text_date:\"%d %b %Y\"}}</p></center>\n</h3>\n",
+            "properties": {},
+            "sort_fields": [
+                "-i_name"
+            ]
+        },
+        "sort_selection": "",
+        "parent": "Template_1",
+        "children": [
+            "Template_9",
+            "Template_10",
+            "Template_11"
+        ]
+    },
+    "Template_9": {
+        "name": "Intro Text",
+        "report_type": "Layout:basic",
+        "tags": "",
+        "item_filter": "A|i_name|cont|intro_text;",
+        "params": {},
+        "sort_selection": "",
+        "parent": "Template_8",
+        "children": []
+    },
+    "Template_10": {
+        "name": "TOC",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "",
+        "params": {
+            "HTML": "<h2>Table of Contents</h2>"
+        },
+        "sort_selection": "",
+        "parent": "Template_8",
+        "children": [
+            "Template_12",
+            "Template_13",
+            "Template_14"
+        ]
+    },
+    "Template_12": {
+        "name": "TOC Sections",
+        "report_type": "Layout:toc",
+        "tags": "",
+        "item_filter": "A|i_type|cont|none;",
+        "params": {
+            "TOCtables": 0,
+            "TOCfigures": 0,
+            "HTML": "<h3>Sections</h3>",
+            "TOCitems": 1
+        },
+        "sort_selection": "",
+        "parent": "Template_10",
+        "children": []
+    },
+    "Template_13": {
+        "name": "TOC Figures",
+        "report_type": "Layout:toc",
+        "tags": "",
+        "item_filter": "A|i_type|cont|none;",
+        "params": {
+            "TOCtables": 0,
+            "TOCfigures": 1,
+            "HTML": "<h3>Figures</h3>",
+            "TOCitems": 0
+        },
+        "sort_selection": "",
+        "parent": "Template_10",
+        "children": []
+    },
+    "Template_14": {
+        "name": "TOC Tables",
+        "report_type": "Layout:toc",
+        "tags": "",
+        "item_filter": "A|i_type|cont|none;",
+        "params": {
+            "TOCtables": 1,
+            "TOCfigures": 0,
+            "HTML": "<h3>Tables</h3>",
+            "TOCitems": 0
+        },
+        "sort_selection": "",
+        "parent": "Template_10",
+        "children": []
+    },
+    "Template_11": {
+        "name": "Analysis Details",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "A|i_name|cont|analysis details;",
+        "params": {
+            "HTML": "<h2>Analysis Details</h2>\n<p>Tabularized list of analysis details, EnSight parts and variable definitions used in this analysis.</p>",
+            "properties": {
+                "TOCItem": "1",
+                "TOCLevel": "0"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_8",
+        "children": []
+    },
+    "Template_2": {
+        "name": "Geom drawing",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "A|i_name|cont|Geometry parameters image;",
+        "params": {
+            "HTML": "<h3>\n<center>\n<p>Figure {{toc_figure_number}}: Piston Shape Parameters for Geometries</p>\n</center>\n</h3>",
+            "sort_fields": [],
+            "properties": {
+                "TOCName": "Geometry Definition",
+                "TOCItem": "1",
+                "TOCLevel": "0",
+                "TOCFigure": "1"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_0",
+        "children": []
+    },
+    "Template_3": {
+        "name": "Geometry Parameters",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "A|i_name|cont|Geometry parameters table;",
+        "params": {
+            "HTML": "<h3>\n<center>\n<p>Table {{toc_table_number}}: Geometry Parameters</p>\n</center>\n</h3>",
+            "properties": {
+                "TOCItem": "1",
+                "TOCLevel": "1",
+                "TOCTable": "1",
+                "format": "[floatdot0,floatdot5,floatdot5,floatdot5,floatdot5,floatdot5,floatdot5,floatdot5]"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_0",
+        "children": [
+            "Template_15"
+        ]
+    },
+    "Template_15": {
+        "name": "Reorder columns",
+        "report_type": "Generator:tablerowcolumnfilter",
+        "tags": "",
+        "item_filter": "",
+        "params": {
+            "select_columns": "'Geometry', 'R*', 'Hcrown*', 'Hmin*', 'Hmax*', 'Dcrown*', 'Dmin*', 'Dmax*'",
+            "generate_merge": "replace",
+            "reorder": true
+        },
+        "sort_selection": "",
+        "parent": "Template_3",
+        "children": []
+    },
+    "Template_4": {
+        "name": "Piston Head 3D Geometries",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "A|i_name|cont|Twelve geoms;",
+        "params": {
+            "HTML": "<h3>\n<center>\n<p>Figure {{toc_figure_number}}: Twelve Piston Head Geometries</p>\n</center>\n</h3>\n</h2><center><p>Shown below are the one-sixth pie slice of the twelve piston head geometries colored by their axial coordinate</p>\n</center></h2>",
+            "properties": {
+                "TOCItem": "1",
+                "TOCLevel": "1",
+                "TOCFigure": "1"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_0",
+        "children": []
+    },
+    "Template_5": {
+        "name": "Simulation Results",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "",
+        "params": {
+            "HTML": "<h2>Simulation Results</h2>\n<p>Animations and plots aggregated from the 108 simulations</p>",
+            "properties": {
+                "TOCItem": "1",
+                "TOCLevel": "0"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_0",
+        "children": [
+            "Template_16",
+            "Template_17",
+            "Template_18"
+        ]
+    },
+    "Template_16": {
+        "name": "Four Cycle Animation",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "A|i_name|cont|four cycle movie;",
+        "params": {
+            "HTML": "<h3>\n<center>\n<p>Figure {{toc_figure_number}}: Single Run from -145 to 138 degrees</p>\n</center>\n</h3>",
+            "properties": {
+                "TOCItem": "1",
+                "TOCLevel": "1",
+                "TOCFigure": "1"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_5",
+        "children": []
+    },
+    "Template_17": {
+        "name": "Transient Animation",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "A|i_name|cont|transient demo movie;",
+        "params": {
+            "HTML": "<h3>\n<center>\n<p>Figure {{toc_figure_number}}: 108 Transient Runs from -20 to 138 degrees</p>\n</center>\n</h3>",
+            "properties": {
+                "TOCItem": "0",
+                "TOCFigure": "1"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_5",
+        "children": []
+    },
+    "Template_18": {
+        "name": "Maximum Variable Plots",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "A|i_name|cont|file max variables;",
+        "params": {
+            "HTML": "<h3>Maximum Variable Plots</h3>",
+            "properties": {
+                "yaxis_format": "floatdot1",
+                "TOCItem": "1",
+                "show_border": "1",
+                "TOCLevel": "1"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_5",
+        "children": [
+            "Template_19",
+            "Template_20"
+        ]
+    },
+    "Template_19": {
+        "name": "Max Tables",
+        "report_type": "Generator:tablerowcolumnfilter",
+        "tags": "",
+        "item_filter": "",
+        "params": {
+            "table_name": "RANDY FIX ME",
+            "generate_merge": "replace",
+            "transpose": true,
+            "properties": {
+                "TOCItem": "0",
+                "xtitle": "Geometric Configuration",
+                "TOCFigure": "2"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_18",
+        "children": [
+            "Template_21",
+            "Template_22",
+            "Template_23",
+            "Template_24",
+            "Template_25",
+            "Template_26"
+        ]
+    },
+    "Template_21": {
+        "name": "max work text",
+        "report_type": "Layout:basic",
+        "tags": "",
+        "item_filter": "A|i_name|cont|max work text;",
+        "params": {
+            "HTML": "",
+            "properties": {
+                "TOCFigure": "0"
+            },
+            "filter_type": "root_replace"
+        },
+        "sort_selection": "",
+        "parent": "Template_19",
+        "children": []
+    },
+    "Template_22": {
+        "name": "Max work plot",
+        "report_type": "Layout:basic",
+        "tags": "Figure",
+        "item_filter": "",
+        "params": {
+            "generate_merge": "replace",
+            "HTML": "<h3><center>\n<p>Maximum work: \\( \\sum_{i=1}^{N} P_{adj}\\frac{ab}{ab}dV\\) </p>\n<p>(adjusted Pressure and Volume both read from thermo.out)</p>\n</center></h3>\n",
+            "transpose": true,
+            "select_columns": "'geom', 'max work Nm', 'soi'",
+            "properties": {
+                "line_color": "[@soi]",
+                "plot": "line",
+                "palette": "Rainbow",
+                "format": "floatdot0",
+                "TOCName": "Maximum Work",
+                "palette_range": "[-10.2,-6.0]",
+                "title": "Max Work [Nm] vs geometry",
+                "line_marker_size": "10",
+                "yaxis": "max work Nm",
+                "palette_title": "start of injection [deg]",
+                "xaxis": "geom",
+                "line_marker_text": "Geom:{{v/x}}  Max Work:{{v/y}} [Nm]  SOI: {{v/color}} [deg]",
+                "line_style": "none",
+                "palette_show": "0",
+                "ytitle": "Maximum Work [Nm]"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_19",
+        "children": []
+    },
+    "Template_23": {
+        "name": "max temp text",
+        "report_type": "Layout:basic",
+        "tags": "",
+        "item_filter": "A|i_name|cont|max temp text;",
+        "params": {
+            "HTML": "",
+            "properties": {
+                "TOCFigure": "0"
+            },
+            "filter_type": "root_replace"
+        },
+        "sort_selection": "",
+        "parent": "Template_19",
+        "children": []
+    },
+    "Template_24": {
+        "name": "Max temp plot",
+        "report_type": "Layout:basic",
+        "tags": "Figure",
+        "item_filter": "",
+        "params": {
+            "generate_merge": "replace",
+            "HTML": "\n",
+            "transpose": true,
+            "select_columns": "'geom', 'max work Nm', 'soi'",
+            "properties": {
+                "line_color": "[@soi]",
+                "plot": "line",
+                "palette": "Rainbow",
+                "format": "floatdot0",
+                "TOCName": "Maximum Temperature",
+                "palette_range": "[-10.2,-6.0]",
+                "title": "Max Temp [K] vs geometry",
+                "line_marker_size": "10",
+                "yaxis": "max temp K",
+                "ytitle": "Maximum Temperature [K]",
+                "xaxis": "geom",
+                "line_marker_text": "Geom:{{v/x}}  Max Temp:{{v/y}} [K]  SOI: {{v/color}} [deg]",
+                "line_style": "none",
+                "palette_title": "start of injection [deg]",
+                "palette_show": "0"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_19",
+        "children": []
+    },
+    "Template_25": {
+        "name": "max press text",
+        "report_type": "Layout:basic",
+        "tags": "",
+        "item_filter": "A|i_name|cont|max press text;",
+        "params": {
+            "HTML": "",
+            "properties": {
+                "TOCFigure": "0"
+            },
+            "filter_type": "root_replace"
+        },
+        "sort_selection": "",
+        "parent": "Template_19",
+        "children": []
+    },
+    "Template_26": {
+        "name": "Max press plot",
+        "report_type": "Layout:basic",
+        "tags": "Figure",
+        "item_filter": "",
+        "params": {
+            "generate_merge": "replace",
+            "HTML": "\n",
+            "transpose": true,
+            "select_columns": "'geom', 'max work Nm', 'soi'",
+            "properties": {
+                "line_color": "[@soi]",
+                "plot": "line",
+                "palette": "Rainbow",
+                "format": "floatdot0",
+                "TOCName": "Maximum Pressure",
+                "palette_range": "[-10.2,-6.0]",
+                "title": "Max Pressure [MPa] vs geometry",
+                "line_marker_size": "10",
+                "yaxis": "max pressure MPa",
+                "ytitle": "Maximum Pressure [MPa]",
+                "xaxis": "geom",
+                "line_marker_text": "Geom:{{v/x}}  Max Pressure:{{v/y}} [MPa]  SOI: {{v/color}} [deg]",
+                "line_style": "none",
+                "palette_title": "start of injection [deg]",
+                "palette_show": "0"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_19",
+        "children": []
+    },
+    "Template_20": {
+        "name": "Top 10",
+        "report_type": "Generator:tablevaluefilter",
+        "tags": "",
+        "item_filter": "",
+        "params": {
+            "count": "12",
+            "sort_fields": [
+                "+i_src"
+            ],
+            "filter": "top_count",
+            "generate_merge": "replace",
+            "properties": {
+                "TOCItem": "0",
+                "TOCTable": "1"
+            },
+            "column_name": "8"
+        },
+        "sort_selection": "",
+        "parent": "Template_18",
+        "children": [
+            "Template_27"
+        ]
+    },
+    "Template_27": {
+        "name": "Remove column",
+        "report_type": "Generator:tablerowcolumnfilter",
+        "tags": "",
+        "item_filter": "",
+        "params": {
+            "invert": false,
+            "select_rows": "'*'",
+            "generate_merge": "replace",
+            "reorder": true,
+            "select_columns": "'geom', 'soi', 'swirl', 'max work Nm', 'max work time sec', 'max pressure MPa', 'max pressure time sec', 'max temp K'"
+        },
+        "sort_selection": "",
+        "parent": "Template_20",
+        "children": [
+            "Template_28"
+        ]
+    },
+    "Template_28": {
+        "name": "Top 10 Max Work Cases",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "",
+        "params": {
+            "HTML": "<h3>\n<center>\nTable {{toc_table_number}}: Top 10 Maximum Work\n</center>\n</h3>",
+            "properties": {
+                "labels_column": "[Geometry,SOI,Swirl,Max Work [Nm],Max Work Time [s],Max Pressure [MPa],Max Pressure Time [s],Max Temperature [K]",
+                "format": "[floatdot0,floatdot1,floatdot2,floatdot2,floatdot6,floatdot4,floatdot6,floatdot2]"
+            }
+        },
+        "sort_selection": "",
+        "parent": "Template_27",
+        "children": []
+    },
+    "Template_6": {
+        "name": "Input and Output Files",
+        "report_type": "Layout:panel",
+        "tags": "",
+        "item_filter": "A|i_type|cont|file;A|i_src|cont|Converge_Nexus_Power_Demo_Jan-Feb_2017;",
+        "params": {
+            "HTML": "<h3>Files Used in This Analysis</h3>",
+            "sort_selection": "all",
+            "filter_type": "root_replace",
+            "properties": {
+                "TOCItem": "1",
+                "TOCLevel": "0"
+            }
+        },
+        "sort_selection": "all",
+        "parent": "Template_0",
+        "children": []
+    },
+    "Template_7": {
+        "name": "Footer",
+        "report_type": "Layout:basic",
+        "tags": "",
+        "item_filter": "A|i_name|cont|ll;",
+        "params": {
+            "HTML": "<hr>\n<p>Report generated by: Bill Dunn</p>\n",
+            "filter_type": "root_replace"
+        },
+        "sort_selection": "",
+        "parent": "Template_0",
+        "children": []
+    }
+}
